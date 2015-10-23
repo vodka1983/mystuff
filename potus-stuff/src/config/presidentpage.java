@@ -1,39 +1,59 @@
 package config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-
-public class presidentpage {
-
+public class presidentpage extends config_vars {
+	
 	WebDriver driver;
+	//basic page layout stuff
+	By pageTitle = By.linkText("Presidents of the United States");
+	By listofpres = By.cssSelector("a[href*='List of Presidents']");
+	By presbyyear = By.cssSelector("a[href*='Presidents by year']");
+	By searchbox = By.cssSelector("a[href*='/search-by-name']");	
+	By partybox = By.cssSelector("a[href*='Presidential parties']");
+	//after "presidential parties" link is pressed
+		By partylegend = By.cssSelector("#legend");
+		By pie = By.className("col-2-3");
 	
-	By pageTitle = By.id("header");
-	By searchbox = By.cssSelector("searchbox");
-	By lastname = By.cssSelector("lastname");
-	By firstname = By.cssSelector("searchbox");
-	By middlename = By.cssSelector("firstname");
-	By year = By.cssSelector("year");
-	By partybox = By.cssSelector("party");
-	By pie = By.cssSelector("chart");
-	
+	//additional locators could recycle those for individual results
+	By lastname = By.cssSelector("");
+	By firstname = By.cssSelector("");
+	By middlename = By.cssSelector("");
+	By year = By.cssSelector("");
 	
 
-		
+	
+			
 	public presidentpage (WebDriver driver){
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
 	}
 	
 	public String getpageTitle() {
 		return driver.findElement(pageTitle).getText();
 	}
 	
-	
-	
+		
 	public String getSearchbox() {
 		return driver.findElement(searchbox).getText();
 	}
+	
+	public String getpresbyyear() {
+		return driver.findElement(presbyyear).getText();
+	}
+	
+	public String getlistofpres() {
+		return driver.findElement(listofpres).getText();
+	}
+	
+	public String getpartybox() {
+		return driver.findElement(partybox).getText();
+	}
+	
+		
+	public String getPie() {
+		return driver.findElement(pie).getText();
+}
+		
 	
 	public String getlastname() {
 		return driver.findElement(lastname).getText();
@@ -54,12 +74,13 @@ public class presidentpage {
 	public String getPartybox() {
 		return driver.findElement(partybox).getText();
 	}
-		
-		public String getPie() {
-			return driver.findElement(pie).getText();
-	}
 	
 	
+	  public void clickParty(){
+	   	   	 
+          driver.findElement(partybox).click();
+
+  }
 	
 	
 }

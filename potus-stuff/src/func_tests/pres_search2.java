@@ -27,7 +27,7 @@ public class pres_search2 extends config_vars {
 	@Before
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver",
-				"location of chrome driver");
+				chrome_d_loc);
 		driver = new ChromeDriver();
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 driver.get(url);
@@ -38,16 +38,18 @@ public class pres_search2 extends config_vars {
 	@Test
 	public void test() throws Exception {
 	
-	objPage  =  new presidentpage(driver);
-	presidentsearch objSearch;
-	
-	Assert.assertTrue(objPage.getpageTitle().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getSearchbox().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getlastname().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getFirstname().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getMiddlename().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getYear().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getPartybox().toLowerCase().contains(""));
+		objPage  =  new presidentpage(driver);
+		presidentsearch objSearch;
+		
+		// the "" are for page element class names to unit test if they are present
+		
+		Assert.assertTrue(objPage.getpageTitle().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getSearchbox().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getlastname().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getFirstname().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getMiddlename().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getYear().toLowerCase().contains(""));
+		Assert.assertTrue(objPage.getPartybox().toLowerCase().contains(""));
 
 	
 	//now search

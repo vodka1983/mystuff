@@ -24,11 +24,11 @@ public class pres_page_test extends config_vars {
 	@Before
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver",
-				"location of chrome driver");
+				chrome_d_loc);
 		driver = new ChromeDriver();
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 driver.get(url);
-		 	 
+		 
 	}
 
 	
@@ -38,15 +38,19 @@ public class pres_page_test extends config_vars {
 	objPage  =  new presidentpage(driver);
 	
 	Assert.assertTrue(objPage.getpageTitle().toLowerCase().contains(""));
+	Assert.assertTrue(objPage.getlistofpres().toLowerCase().contains(""));
+	Assert.assertTrue(objPage.getpresbyyear().toLowerCase().contains(""));
 	Assert.assertTrue(objPage.getSearchbox().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getlastname().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getFirstname().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getMiddlename().toLowerCase().contains(""));
-	Assert.assertTrue(objPage.getYear().toLowerCase().contains(""));
+	Assert.assertTrue(objPage.getpartybox().toLowerCase().contains(""));
+	
+	
+	//click party
+	objPage.clickParty();
+	//pie and party list should show
+	Assert.assertTrue(objPage.getPie().toLowerCase().contains(""));
 	Assert.assertTrue(objPage.getPartybox().toLowerCase().contains(""));
 
-	
-	 
+		 
     }
 	
 		
