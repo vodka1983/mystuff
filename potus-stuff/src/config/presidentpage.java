@@ -6,11 +6,12 @@ public class presidentpage extends config_vars {
 	
 	WebDriver driver;
 	//basic page layout stuff
-	By pageTitle = By.linkText("Presidents of the United States");
-	By listofpres = By.cssSelector("a[href*='List of Presidents']");
-	By presbyyear = By.cssSelector("a[href*='Presidents by year']");
-	By searchbox = By.cssSelector("a[href*='/search-by-name']");	
-	By partybox = By.cssSelector("a[href*='Presidential parties']");
+	By pageTitle = By.xpath("//h1[text() = 'Presidents of the United States']");
+	By listofpres = By.linkText("List of Presidents");
+	By presbyyear = By.cssSelector("a[href*='/search-by-year']");
+	By searchlink = By.cssSelector("a[href*='/search-by-name']");
+	By partybox = By.cssSelector("a[href*='/parties']");
+	
 	//after "presidential parties" link is pressed
 		By partylegend = By.cssSelector("#legend");
 		By pie = By.className("col-2-3");
@@ -20,7 +21,8 @@ public class presidentpage extends config_vars {
 	By firstname = By.cssSelector("");
 	By middlename = By.cssSelector("");
 	By year = By.cssSelector("");
-	
+	By veryfirst = By.cssSelector("a[href*='president/1']");
+	By verybest = By.cssSelector("a[href*='president/3']");
 
 	
 			
@@ -33,8 +35,8 @@ public class presidentpage extends config_vars {
 	}
 	
 		
-	public String getSearchbox() {
-		return driver.findElement(searchbox).getText();
+	public String getSearchlink() {
+		return driver.findElement(searchlink).getText();
 	}
 	
 	public String getpresbyyear() {
@@ -54,6 +56,15 @@ public class presidentpage extends config_vars {
 		return driver.findElement(pie).getText();
 }
 		
+	public String getlistfirst() {
+		return driver.findElement(veryfirst).getText();
+	}
+
+	public String getlistthird() {
+		return driver.findElement(verybest).getText();
+	}
+
+	
 	
 	public String getlastname() {
 		return driver.findElement(lastname).getText();
@@ -71,10 +82,7 @@ public class presidentpage extends config_vars {
 		return driver.findElement(year).getText();
 	}
 	
-	public String getPartybox() {
-		return driver.findElement(partybox).getText();
-	}
-	
+		
 	
 	  public void clickParty(){
 	   	   	 
@@ -82,5 +90,5 @@ public class presidentpage extends config_vars {
 
   }
 	
-	
+	 
 }

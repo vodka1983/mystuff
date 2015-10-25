@@ -1,0 +1,86 @@
+package config;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class presidentpage extends config_vars {
+	
+	WebDriver driver;
+	//basic page layout stuff
+	By pageTitle = By.tagName("h1");
+	By listofpres = By.cssSelector("a[href*='List of Presidents']");
+	By presbyyear = By.cssSelector("a[href*='Presidents by year']");
+	By searchbox = By.cssSelector("a[href*='/search-by-name']");	
+	By partybox = By.cssSelector("a[href*='Presidential parties']");
+	//after "presidential parties" link is pressed
+		By partylegend = By.cssSelector("#legend");
+		By pie = By.className("col-2-3");
+	
+	//additional locators could recycle those for individual results
+	By lastname = By.cssSelector("");
+	By firstname = By.cssSelector("");
+	By middlename = By.cssSelector("");
+	By year = By.cssSelector("");
+	
+
+	
+			
+	public presidentpage (WebDriver driver){
+		this.driver = driver;
+	}
+	
+	public String getpageTitle() {
+		return driver.findElement(pageTitle).getText();
+	}
+	
+		
+	public String getSearchbox() {
+		return driver.findElement(searchbox).getText();
+	}
+	
+	public String getpresbyyear() {
+		return driver.findElement(presbyyear).getText();
+	}
+	
+	public String getlistofpres() {
+		return driver.findElement(listofpres).getText();
+	}
+	
+	public String getpartybox() {
+		return driver.findElement(partybox).getText();
+	}
+	
+		
+	public String getPie() {
+		return driver.findElement(pie).getText();
+}
+		
+	
+	public String getlastname() {
+		return driver.findElement(lastname).getText();
+	}
+	
+	public String getFirstname() {
+		return driver.findElement(firstname).getText();
+	}
+	
+	public String getMiddlename() {
+		return driver.findElement(middlename).getText();
+	}
+	
+	public String getYear() {
+		return driver.findElement(year).getText();
+	}
+	
+	public String getPartybox() {
+		return driver.findElement(partybox).getText();
+	}
+	
+	
+	  public void clickParty(){
+	   	   	 
+          driver.findElement(partybox).click();
+
+  }
+	
+	
+}

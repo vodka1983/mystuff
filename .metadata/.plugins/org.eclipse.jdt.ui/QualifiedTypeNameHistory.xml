@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="config.presidentsearch"/>
+<fullyQualifiedTypeName name="org.hamcrest.CoreMatchers"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.ui.Select"/>
+<fullyQualifiedTypeName name="func_tests.presidentpage_list_pie_test"/>
+<fullyQualifiedTypeName name="func_tests.pres_search_last_and_first"/>
+<fullyQualifiedTypeName name="func_tests.pres_search_by_year"/>
+<fullyQualifiedTypeName name="func_tests.pres_search_first_only"/>
+<fullyQualifiedTypeName name="func_tests.pres_search_last_only"/>
+</qualifiedTypeNameHistroy>

@@ -3,18 +3,31 @@ package config;
 public class config_vars {
 	
 	//change this to your locale!
-	public String chrome_d_loc = "Z:\\vodka1983\\work\\Selenium\\Webdriver\\potus-stuff\\libs\\chromedriver.exe";
+	public String chrome_d_loc = "C:\\Repository\\potus-stuff\\libs\\chromedriver.exe";
 	
 	
 	
 	public String url = "https://potus-ui.herokuapp.com";
-	public String year = "1978";
-	public String p_First = "Alex";
-	public String P_Last = "Grochev";
+	public String year = "1789";
+	public String p_First = "george";
+	public String P_Last = "washington";
+	public String best = "thomas jefferson";
+	public String tworesulters ="bush";
+	public String firstonly = "barack";
 	public String p_Mid = "S";
 	public String party = "awesome";
 	public String oneres = "Abraham";
 	public String mulires = "Bush";
+	public String myyear = "1789";
+	//page constants, these came straight from css atrib of the page
+	public String header = "Presidents of the United States";
+	public String listofpre = "List of Presidents";
+	public String presbyyear = "Presidents by year";
+	public String findbyname = "Find Presidents by name";
+	public String presparties = "Presidential parties";
+	public String chart = "col-2-3";
+	public String plegend = "#legend";
+	
 	
 }
 
